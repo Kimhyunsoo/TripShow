@@ -14,6 +14,7 @@ public class MainActivity extends Activity {
 		//
 		//
 		//
+		System.out.println("bbb");
 		System.out.println("aaa");
 	}
 
