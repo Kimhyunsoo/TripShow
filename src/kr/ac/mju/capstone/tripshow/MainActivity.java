@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 		merge;
 		System.out.println("ccc");
 		System.out.println("aaa");
+		bbbb
 	}
 
 	@Override
