@@ -14,7 +14,7 @@ public class MainActivity extends Activity {
 		//
 		//
 		//
-		
+		System.out.println("aaa");
 	}
 
 	@Override
