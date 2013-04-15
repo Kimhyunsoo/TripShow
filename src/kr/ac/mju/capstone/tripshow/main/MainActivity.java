@@ -1,5 +1,6 @@
-package kr.ac.mju.capstone.tripshow;
+package kr.ac.mju.capstone.tripshow.main;
 
+import kr.ac.mju.capstone.tripshow.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -10,12 +11,6 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
-		//
-		//
-		//
-		System.out.println("bbb");
-		System.out.println("aaa");
 	}
 
 	@Override
