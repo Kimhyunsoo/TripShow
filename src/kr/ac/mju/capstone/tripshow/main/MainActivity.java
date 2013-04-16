@@ -1,10 +1,10 @@
 package kr.ac.mju.capstone.tripshow.main;
 
 import kr.ac.mju.capstone.tripshow.R;
-import kr.ac.mju.capstone.tripshow.Tab1_Activity;
-import kr.ac.mju.capstone.tripshow.Tab2_Activity;
-import kr.ac.mju.capstone.tripshow.Tab3_Activity;
-import kr.ac.mju.capstone.tripshow.Tab4_Activity;
+import kr.ac.mju.capstone.tripshow.tabs.Tab1_Activity;
+import kr.ac.mju.capstone.tripshow.tabs.Tab2_Activity;
+import kr.ac.mju.capstone.tripshow.tabs.Tab3_Activity;
+import kr.ac.mju.capstone.tripshow.tabs.Tab4_Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;

@@ -25,7 +25,7 @@
         <activity android:name="Tab1_Activity"></activity>
         <activity android:name="Tab2_Activity"></activity>
         <activity android:name="Tab3_Activity"></activity>
-        <activity android:name="Tab4_Activity"></activity>
+        <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab4_Activity"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
-package kr.ac.mju.capstone.tripshow;
+package kr.ac.mju.capstone.tripshow.tabs;
 
+import kr.ac.mju.capstone.tripshow.R;
 import android.app.Activity;
 import android.os.Bundle;
 
