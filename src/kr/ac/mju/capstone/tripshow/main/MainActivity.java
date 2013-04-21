@@ -51,5 +51,4 @@ public class MainActivity extends TabActivity {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
-
 }
