@@ -8,16 +8,5 @@
     
     <string name="signup_btn">SIGN UP</string>
     <string name="login_btn">LOG IN</string>
-    
-    
-    <string name="id_hint">ID</string>
-    <string name="pw_hint">PW</string>
-    
-    <string name="user_lastName_signup">이름(성은 제외):</string>
-    <string name="user_firstName_signup">성:</string>
-    <string name="email_signup">이메일:</string>
-    <string name="pw1_signup">비밀번호:</string>
-    <string name="pw2_signup">비밀번호(확인):</string>
-    
 
 </resources>

@@ -4,6 +4,7 @@ import kr.ac.mju.capstone.tripshow.R;
 import kr.ac.mju.capstone.tripshow.tabs.Tab1_Activity;
 import kr.ac.mju.capstone.tripshow.tabs.Tab2_Activity;
 import kr.ac.mju.capstone.tripshow.tabs.Tab3_Activity;
+import kr.ac.mju.capstone.tripshow.tabs.Tab4_Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +12,6 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TabHost;
 import android.widget.Toast;
 
@@ -42,6 +42,12 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 				.setIndicator("Third")
 				.setContent(new Intent(this, Tab3_Activity.class)));
 
+		tabHost.addTab(tabHost.newTabSpec("tab4")
+		// .setIndicator("Information",
+		// getResources().getDrawable(R.drawable.inward_black_info))
+				.setIndicator("Fourth")
+				.setContent(new Intent(this, Tab4_Activity.class)));
+
 		((ImageButton)findViewById(R.id.list_btn)).setOnClickListener(this);
 		((ImageButton)findViewById(R.id.search_btn)).setOnClickListener(this);
 	}
@@ -61,12 +67,7 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 			Toast.makeText(getBaseContext(), "List Button", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.search_btn:
-			LinearLayout linearLayout = (LinearLayout)findViewById(R.id.LinearLayout_search);
-			if (linearLayout.getVisibility() == View.GONE) {
-				linearLayout.setVisibility(View.VISIBLE);
-			} else {
-				linearLayout.setVisibility(View.GONE);
-			}
+			Toast.makeText(getBaseContext(), "Search Button", Toast.LENGTH_SHORT).show();
 			break;
 		default:
 			break;
