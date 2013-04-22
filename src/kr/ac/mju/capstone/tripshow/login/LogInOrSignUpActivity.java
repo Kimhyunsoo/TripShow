@@ -28,10 +28,10 @@ public class LogInOrSignUpActivity extends Activity implements OnClickListener {
 		Intent intent = null;
 		switch (v.getId()) {
 		case R.id.signup_btn:
-			intent = new Intent(LogInOrSignUpActivity.this, TabsActivity.class);
+			intent = new Intent(LogInOrSignUpActivity.this, SignUpActivity.class);
 			break;
 		case R.id.login_btn:
-			intent = new Intent(LogInOrSignUpActivity.this, TabsActivity.class);
+			intent = new Intent(LogInOrSignUpActivity.this, LoginActivity.class);
 			break;
 		default:
 			break;
