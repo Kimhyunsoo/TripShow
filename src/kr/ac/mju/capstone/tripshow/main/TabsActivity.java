@@ -11,7 +11,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TabHost;
 import android.widget.Toast;
 
@@ -48,8 +48,8 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 				.setIndicator("Fourth")
 				.setContent(new Intent(this, Tab4_Activity.class)));
 
-		((Button)findViewById(R.id.list_btn)).setOnClickListener(this);
-		((Button)findViewById(R.id.search_btn)).setOnClickListener(this);
+		((ImageButton)findViewById(R.id.list_btn)).setOnClickListener(this);
+		((ImageButton)findViewById(R.id.search_btn)).setOnClickListener(this);
 	}
 
 	@Override

@@ -10,28 +10,31 @@
         android:background="#ff0000"
         android:orientation="horizontal" >
 
-        <Button
+        <ImageButton
             android:id="@+id/list_btn"
             android:layout_width="25dip"
             android:layout_height="25dip"
             android:layout_gravity="center_vertical|left"
-            android:background="@drawable/list_btn_selector" />
+            android:background="@drawable/list_btn_selector"
+            android:contentDescription="@string/img_desc"
+            android:src="@drawable/icon_list_btn" />
 
         <TextView
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
             android:layout_weight="1"
+            android:gravity="center_horizontal"
             android:text="@string/app_name"
             android:textColor="@android:color/black"
             android:textSize="25sp" />
 
-        <Button
+        <ImageButton
             android:id="@+id/search_btn"
             android:layout_width="30dip"
             android:layout_height="30dip"
             android:layout_gravity="center_vertical|right"
-            android:background="@drawable/icon_search_btn" />
+            android:background="@drawable/icon_search_btn"
+            android:contentDescription="@string/img_desc" />
     </LinearLayout>
 
     <TabHost
