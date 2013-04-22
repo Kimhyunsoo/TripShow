@@ -20,7 +20,6 @@
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab1_Activity"></activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab2_Activity"></activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab3_Activity"></activity>
-        <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab4_Activity"></activity>
         <activity 
             android:name="kr.ac.mju.capstone.tripshow.main.IntroActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -30,6 +29,13 @@
             </intent-filter>
         </activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.login.LogInOrSignUpActivity"></activity>
+        <activity 
+            android:name=".login.LoginActivity"
+            android:label="@string/login_btn"
+            ></activity>
+        <activity 
+            android:name=".login.SignUpActivity"
+            android:label="@string/signup_btn"></activity>
     </application>
 
 </manifest>
