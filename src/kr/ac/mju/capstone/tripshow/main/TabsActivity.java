@@ -9,14 +9,18 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.TabHost;
+import android.widget.Toast;
 
-public class MainActivity extends TabActivity {
+public class TabsActivity extends TabActivity implements OnClickListener {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.tabs_lyaout);
  
 		final TabHost tabHost = getTabHost();
 
@@ -43,6 +47,9 @@ public class MainActivity extends TabActivity {
 		// getResources().getDrawable(R.drawable.inward_black_info))
 				.setIndicator("Fourth")
 				.setContent(new Intent(this, Tab4_Activity.class)));
+
+		((Button)findViewById(R.id.list_btn)).setOnClickListener(this);
+		((Button)findViewById(R.id.search_btn)).setOnClickListener(this);
 	}
 
 	@Override
@@ -50,5 +57,20 @@ public class MainActivity extends TabActivity {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
+	}
+
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		switch (v.getId()) {
+		case R.id.list_btn:
+			Toast.makeText(getBaseContext(), "List Button", Toast.LENGTH_SHORT).show();
+			break;
+		case R.id.search_btn:
+			Toast.makeText(getBaseContext(), "Search Button", Toast.LENGTH_SHORT).show();
+			break;
+		default:
+			break;
+		}
 	}
 }

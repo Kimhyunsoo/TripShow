@@ -1,6 +1,7 @@
 package kr.ac.mju.capstone.tripshow.main;
 
 import kr.ac.mju.capstone.tripshow.R;
+import kr.ac.mju.capstone.tripshow.login.LogInOrSignUpActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,7 @@ public class IntroActivity extends Activity {
 				try {
 					Thread.sleep(1000);
 					Intent intent = new Intent(IntroActivity.this,
-							MainActivity.class);
+							LogInOrSignUpActivity.class);
 					startActivity(intent);
 					finish();
 				} catch (InterruptedException e) {
