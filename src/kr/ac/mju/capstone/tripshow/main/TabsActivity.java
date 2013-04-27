@@ -6,6 +6,7 @@ import kr.ac.mju.capstone.tripshow.tabs.Tab2_Activity;
 import kr.ac.mju.capstone.tripshow.tabs.Tab3_Activity;
 import android.app.TabActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
@@ -27,23 +28,27 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 		tabHost.addTab(tabHost.newTabSpec("tab1")
 		// .setIndicator("Device List",
 		// getResources().getDrawable(R.drawable.device_icon))
-				.setIndicator("First")
+				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_home))
 				.setContent(new Intent(this, Tab1_Activity.class)));
 
 		tabHost.addTab(tabHost.newTabSpec("tab2")
 		// .setIndicator("Device detail",
 		// getResources().getDrawable(R.drawable.pie_chart))
-				.setIndicator("Second")
+				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_camera))
 				.setContent(new Intent(this, Tab2_Activity.class)));
 
 		tabHost.addTab(tabHost.newTabSpec("tab3")
 		// .setIndicator("Information",
 		// getResources().getDrawable(R.drawable.inward_black_info))
-				.setIndicator("Third")
+				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_favorit))
 				.setContent(new Intent(this, Tab3_Activity.class)));
 
 		((ImageButton)findViewById(R.id.list_btn)).setOnClickListener(this);
 		((ImageButton)findViewById(R.id.search_btn)).setOnClickListener(this);
+		
+		for (int i = 0; i < 3; i++) {
+			tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#F7876D"));
+		}
 	}
 
 	@Override

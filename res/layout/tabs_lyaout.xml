@@ -7,53 +7,64 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="40dip"
-        android:background="#ff0000"
+        android:background="#F7876D"
         android:orientation="horizontal" >
 
-        <ImageButton
-            android:id="@+id/list_btn"
+        <LinearLayout
             android:layout_width="30dip"
-            android:layout_height="30dip"
-            android:layout_gravity="center_vertical|left"
-            android:contentDescription="@string/img_desc"
-            android:background="@drawable/icon_list_btn" />
+            android:layout_height="fill_parent" >
 
-        <TextView
+            <ImageButton
+                android:id="@+id/list_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/search_btn_selector"
+                android:contentDescription="@string/img_desc"
+                android:src="@drawable/icon_side_menu" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:text="@string/app_name"
-            android:textColor="@android:color/black"
-            android:textSize="25sp" />
+            android:layout_weight="1" >
 
-        <ImageButton
-            android:id="@+id/search_btn"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:contentDescription="@string/img_desc"
+                android:src="@drawable/img_home_top" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="30dip"
-            android:layout_height="30dip"
-            android:layout_gravity="center_vertical|right"
-            android:background="@drawable/icon_search_btn"
-            android:contentDescription="@string/img_desc" />
+            android:layout_height="fill_parent" >
+
+            <ImageButton
+                android:id="@+id/search_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:src="@drawable/icon_search_btn"
+                android:background="@drawable/search_btn_selector"
+                android:contentDescription="@string/img_desc" />
+        </LinearLayout>
     </LinearLayout>
-    
+
     <LinearLayout
         android:id="@+id/LinearLayout_search"
         android:layout_width="fill_parent"
         android:layout_height="40dip"
         android:background="#0000ff"
-        android:visibility="gone" 
-        >
-        
+        android:visibility="gone" >
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="검색어 입력"
-            />
+            android:hint="검색어 입력" />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="검색" 
-            />
+            android:text="검색" />
     </LinearLayout>
 
     <TabHost
