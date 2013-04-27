@@ -11,11 +11,16 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int icon_list_btn=0x7f020001;
-        public static final int icon_lock=0x7f020002;
-        public static final int icon_search_btn=0x7f020003;
-        public static final int list_btn_selector=0x7f020004;
+        public static final int bg_login_signup=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int icon_launcher=0x7f020002;
+        public static final int icon_list_btn=0x7f020003;
+        public static final int icon_lock=0x7f020004;
+        public static final int icon_login=0x7f020005;
+        public static final int icon_search_btn=0x7f020006;
+        public static final int icon_signup=0x7f020007;
+        public static final int intro_logo=0x7f020008;
+        public static final int list_btn_selector=0x7f020009;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f07000d;

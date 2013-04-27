@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class LogInOrSignUpActivity extends Activity implements OnClickListener {
 
@@ -18,25 +20,26 @@ public class LogInOrSignUpActivity extends Activity implements OnClickListener {
 	    // TODO Auto-generated method stub
 	    setContentView(R.layout.login_or_signup_layout);
 	    
-	    ((Button)findViewById(R.id.login_btn)).setOnClickListener(this);
-	    ((Button)findViewById(R.id.signup_btn)).setOnClickListener(this);
+	    ImageButton img_btn = (ImageButton)findViewById(R.id.login_btn);
+	    img_btn.setOnClickListener(this);
+	    ImageButton img_btn_1 = (ImageButton)findViewById(R.id.signup_btn);
+	    img_btn_1.setOnClickListener(this);
 	}
 
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		Intent intent = null;
 		switch (v.getId()) {
-		case R.id.signup_btn:
-			intent = new Intent(LogInOrSignUpActivity.this, SignUpActivity.class);
-			break;
-		case R.id.login_btn:
-			intent = new Intent(LogInOrSignUpActivity.this, LoginActivity.class);
-			break;
-		default:
-			break;
+			case R.id.login_btn:
+				Intent intent = new Intent(LogInOrSignUpActivity.this, LoginActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.signup_btn:
+				Intent intent1 = new Intent(LogInOrSignUpActivity.this, SignUpActivity.class);
+				startActivity(intent1);
+				break;
+			default:
+				break;
 		}
-		startActivity(intent);
 	}
-
 }

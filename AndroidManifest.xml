@@ -10,7 +10,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/icon_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
@@ -20,14 +20,6 @@
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab1_Activity"></activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab2_Activity"></activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.tabs.Tab3_Activity"></activity>
-        <activity 
-            android:name="kr.ac.mju.capstone.tripshow.main.IntroActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name="kr.ac.mju.capstone.tripshow.login.LogInOrSignUpActivity"></activity>
         <activity 
             android:name=".login.LoginActivity"
@@ -36,6 +28,14 @@
         <activity 
             android:name=".login.SignUpActivity"
             android:label="@string/signup_btn"></activity>
+        <activity 
+            android:name=".main.IntroActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -11,9 +11,8 @@ public class IntroActivity extends Activity {
 	/** Called when the activity is first created. */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		// TODO Auto-generated method stub
-		setContentView(R.layout.intro_layout);
+	    super.onCreate(savedInstanceState);
+	    setContentView(R.layout.intro_layout);
 
 		new Thread(new Runnable() {
 
@@ -33,4 +32,5 @@ public class IntroActivity extends Activity {
 			}
 		}).start();
 	}
+
 }
