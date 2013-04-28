@@ -11,11 +11,22 @@ public final class R {
     public static final class attr {
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
-        public static final int icon_list_btn=0x7f020001;
-        public static final int icon_lock=0x7f020002;
-        public static final int icon_search_btn=0x7f020003;
-        public static final int list_btn_selector=0x7f020004;
+        public static final int bg_login_signup=0x7f020000;
+        public static final int ic_launcher=0x7f020001;
+        public static final int icon_launcher=0x7f020002;
+        public static final int icon_list_btn=0x7f020003;
+        public static final int icon_lock=0x7f020004;
+        public static final int icon_login=0x7f020005;
+        public static final int icon_search_btn=0x7f020006;
+        public static final int icon_side_menu=0x7f020007;
+        public static final int icon_signup=0x7f020008;
+        public static final int icon_tab_camera=0x7f020009;
+        public static final int icon_tab_favorit=0x7f02000a;
+        public static final int icon_tab_home=0x7f02000b;
+        public static final int img_home_top=0x7f02000c;
+        public static final int intro_logo=0x7f02000d;
+        public static final int list_btn_selector=0x7f02000e;
+        public static final int search_btn_selector=0x7f02000f;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f07000d;
@@ -43,6 +54,7 @@ public final class R {
         public static final int tab2_layout=0x7f030005;
         public static final int tab3_layout=0x7f030006;
         public static final int tabs_layout=0x7f030007;
+        public static final int tabs_lyaout=0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;
