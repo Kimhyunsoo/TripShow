@@ -53,7 +53,7 @@ public final class R {
         public static final int tab1_layout=0x7f030004;
         public static final int tab2_layout=0x7f030005;
         public static final int tab3_layout=0x7f030006;
-        public static final int tabs_lyaout=0x7f030007;
+        public static final int tabs_layout=0x7f030007;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;

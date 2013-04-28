@@ -21,7 +21,7 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.tabs_lyaout);
+		setContentView(R.layout.tabs_layout);
  
 		final TabHost tabHost = getTabHost();
 
