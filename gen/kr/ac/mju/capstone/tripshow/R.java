@@ -36,12 +36,15 @@ public final class R {
         public static final int login_btn=0x7f070002;
         public static final int login_id_edit=0x7f070000;
         public static final int login_pw_edit=0x7f070001;
-        public static final int menu_settings=0x7f07000e;
+        public static final int menu_settings=0x7f070011;
         public static final int pw1_edit=0x7f070007;
         public static final int pw2_edit=0x7f070008;
         public static final int search_btn=0x7f07000b;
         public static final int signup_btn=0x7f070003;
         public static final int signup_request_btn=0x7f070009;
+        public static final int tab1_indicator=0x7f07000e;
+        public static final int tab2_indicator=0x7f07000f;
+        public static final int tab3_indicator=0x7f070010;
         public static final int user_firstName_edit=0x7f070004;
         public static final int user_lastName_edit=0x7f070005;
     }
