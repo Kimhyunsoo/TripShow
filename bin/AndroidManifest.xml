@@ -16,6 +16,11 @@
         <activity
             android:name="kr.ac.mju.capstone.tripshow.main.TabsActivity"
             android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".tabs.Tab1_Activity" >
         </activity>
@@ -42,11 +47,6 @@
         <activity 
             android:name=".test.SrollMenuTestActivity"
             android:theme="@android:style/Theme.NoTitleBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
