@@ -38,6 +38,10 @@
         <activity
             android:name=".main.IntroActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
+        </activity>
+        <activity 
+            android:name=".test.SrollMenuTestActivity"
+            android:theme="@android:style/Theme.NoTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
