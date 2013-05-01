@@ -12,36 +12,43 @@ public final class R {
     }
     public static final class drawable {
         public static final int bg_login_signup=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int icon_launcher=0x7f020002;
-        public static final int icon_list_btn=0x7f020003;
-        public static final int icon_lock=0x7f020004;
-        public static final int icon_login=0x7f020005;
-        public static final int icon_search_btn=0x7f020006;
-        public static final int icon_side_menu=0x7f020007;
-        public static final int icon_signup=0x7f020008;
-        public static final int icon_tab_camera=0x7f020009;
-        public static final int icon_tab_favorit=0x7f02000a;
-        public static final int icon_tab_home=0x7f02000b;
-        public static final int img_home_top=0x7f02000c;
-        public static final int intro_logo=0x7f02000d;
-        public static final int list_btn_selector=0x7f02000e;
-        public static final int search_btn_selector=0x7f02000f;
+        public static final int dot_line=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int icon_launcher=0x7f020003;
+        public static final int icon_list_btn=0x7f020004;
+        public static final int icon_lock=0x7f020005;
+        public static final int icon_login=0x7f020006;
+        public static final int icon_search_btn=0x7f020007;
+        public static final int icon_side_menu=0x7f020008;
+        public static final int icon_signup=0x7f020009;
+        public static final int icon_tab_camera=0x7f02000a;
+        public static final int icon_tab_favorit=0x7f02000b;
+        public static final int icon_tab_home=0x7f02000c;
+        public static final int img_home_top=0x7f02000d;
+        public static final int intro_logo=0x7f02000e;
+        public static final int list_btn_selector=0x7f02000f;
+        public static final int search_btn_selector=0x7f020010;
     }
     public static final class id {
         public static final int LinearLayout01=0x7f07000d;
         public static final int LinearLayout_search=0x7f07000c;
+        public static final int contents=0x7f070012;
         public static final int email_edit=0x7f070006;
         public static final int list_btn=0x7f07000a;
         public static final int login_btn=0x7f070002;
         public static final int login_id_edit=0x7f070000;
         public static final int login_pw_edit=0x7f070001;
-        public static final int menu_settings=0x7f07000e;
+        public static final int menu_settings=0x7f070014;
         public static final int pw1_edit=0x7f070007;
         public static final int pw2_edit=0x7f070008;
         public static final int search_btn=0x7f07000b;
         public static final int signup_btn=0x7f070003;
         public static final int signup_request_btn=0x7f070009;
+        public static final int slide_menu_btn=0x7f070013;
+        public static final int sub_layout=0x7f070011;
+        public static final int tab1_indicator=0x7f07000e;
+        public static final int tab2_indicator=0x7f07000f;
+        public static final int tab3_indicator=0x7f070010;
         public static final int user_firstName_edit=0x7f070004;
         public static final int user_lastName_edit=0x7f070005;
     }
@@ -54,6 +61,7 @@ public final class R {
         public static final int tab2_layout=0x7f030005;
         public static final int tab3_layout=0x7f030006;
         public static final int tabs_layout=0x7f030007;
+        public static final int test_layout=0x7f030008;
     }
     public static final class menu {
         public static final int activity_main=0x7f060000;

@@ -14,9 +14,14 @@ import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TabHost;
+import android.widget.TabHost.OnTabChangeListener;
 import android.widget.Toast;
 
-public class TabsActivity extends TabActivity implements OnClickListener {
+public class TabsActivity extends TabActivity implements OnClickListener, OnTabChangeListener {
+	private static final String TAB1 = "tab1";
+	private static final String TAB2 = "tab2";
+	private static final String TAB3 = "tab3";
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -25,21 +30,15 @@ public class TabsActivity extends TabActivity implements OnClickListener {
  
 		final TabHost tabHost = getTabHost();
 
-		tabHost.addTab(tabHost.newTabSpec("tab1")
-		// .setIndicator("Device List",
-		// getResources().getDrawable(R.drawable.device_icon))
+		tabHost.addTab(tabHost.newTabSpec(TAB1)
 				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_home))
 				.setContent(new Intent(this, Tab1_Activity.class)));
 
-		tabHost.addTab(tabHost.newTabSpec("tab2")
-		// .setIndicator("Device detail",
-		// getResources().getDrawable(R.drawable.pie_chart))
+		tabHost.addTab(tabHost.newTabSpec(TAB2)
 				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_camera))
 				.setContent(new Intent(this, Tab2_Activity.class)));
 
-		tabHost.addTab(tabHost.newTabSpec("tab3")
-		// .setIndicator("Information",
-		// getResources().getDrawable(R.drawable.inward_black_info))
+		tabHost.addTab(tabHost.newTabSpec(TAB3)
 				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_favorit))
 				.setContent(new Intent(this, Tab3_Activity.class)));
 
@@ -49,6 +48,11 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 		for (int i = 0; i < 3; i++) {
 			tabHost.getTabWidget().getChildAt(i).setBackgroundColor(Color.parseColor("#F7876D"));
 		}
+		
+		tabHost.setOnTabChangedListener(this);
+		findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
+		findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
+		findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
 	}
 
 	@Override
@@ -57,7 +61,7 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 		getMenuInflater().inflate(R.menu.activity_main, menu);
 		return true;
 	}
-
+	
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
@@ -75,6 +79,24 @@ public class TabsActivity extends TabActivity implements OnClickListener {
 			break;
 		default:
 			break;
+		}
+	}
+
+	@Override
+	public void onTabChanged(String tabId) {
+		// TODO Auto-generated method stub
+		if (tabId.equals(TAB1)) {
+			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
+			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
+		} else if (tabId.equals(TAB2)) {
+			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
+			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
+		} else if (tabId.equals(TAB3)) {
+			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
 		}
 	}
 }
