@@ -12,5 +12,4 @@ public class Tab3_Activity extends Activity {
 	    super.onCreate(savedInstanceState);
 	    setContentView(R.layout.tab3_layout);
 	}
-
 }

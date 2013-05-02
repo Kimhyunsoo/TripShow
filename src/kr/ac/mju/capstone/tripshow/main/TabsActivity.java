@@ -21,12 +21,15 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.view.animation.TranslateAnimation;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TabHost;
 import android.widget.RelativeLayout.LayoutParams;
+import android.widget.TabHost;
 import android.widget.TabHost.OnTabChangeListener;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TabsActivity extends TabActivity implements OnTouchListener, OnClickListener, OnTabChangeListener {
@@ -44,13 +47,15 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 	private Timer slidingTimer = null;
 	private TimerTask slidingTimerTask = null;
 	
+	private TabHost tabHost = null;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.tabs_layout);
  
-		final TabHost tabHost = getTabHost();
+		tabHost = getTabHost();
 
 		tabHost.addTab(tabHost.newTabSpec(TAB1)
 				.setIndicator("", getResources().getDrawable(R.drawable.icon_tab_home))
@@ -196,7 +201,6 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 				oldX = currentX;
 			}
 		} else if (event.getAction() == MotionEvent.ACTION_UP) {
-			Toast.makeText(getBaseContext(), "Touch", Toast.LENGTH_SHORT).show();
 			final float currentX = event.getRawX();
 			// direction
 			float direction = upOldX - currentX;
@@ -239,16 +243,16 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		case R.id.search_btn:
 			LinearLayout linearLayout = (LinearLayout)findViewById(R.id.LinearLayout_search);
 			if (linearLayout.getVisibility() == View.GONE) {
-				linearLayout.setVisibility(View.VISIBLE);
+				slideToBottom(linearLayout);
 			} else {
-				linearLayout.setVisibility(View.GONE);
+				slideToTop(linearLayout);
 			}
 			break;
 		case R.id.logout_btn:
 			Toast.makeText(getBaseContext(), "Logout", Toast.LENGTH_SHORT).show();
 			break;
 		case R.id.sidemenu_mypage:
-			Toast.makeText(getBaseContext(), "mypage", Toast.LENGTH_SHORT).show();
+			goToMyPage();
 			break;
 		case R.id.sidemenu_message:
 			Toast.makeText(getBaseContext(), "message", Toast.LENGTH_SHORT).show();
@@ -264,9 +268,40 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		}
 	}
 
+	private void goToMyPage() {
+		FrameLayout fm = (FrameLayout)findViewById(android.R.id.tabcontent);
+		fm.removeAllViews();
+		
+		LinearLayout linerLayout = new LinearLayout(this);
+		linerLayout.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT));
+		linerLayout.setBackgroundColor(Color.parseColor("#f9e2b0"));
+		TextView tv = new TextView(this);
+		tv.setText("My Page");
+		tv.setTextColor(Color.BLACK);
+		
+		fm.addView(linerLayout);
+		
+	}
+	
+	public void slideToBottom(View view){
+		TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
+		animate.setDuration(500);
+		animate.setFillAfter(true);
+		view.startAnimation(animate);
+		view.setVisibility(View.VISIBLE);
+	}
+	
+	// To animate view slide out from bottom to top
+	public void slideToTop(View view){
+		TranslateAnimation animate = new TranslateAnimation(0,0,0,-view.getHeight());
+		animate.setDuration(500);
+		animate.setFillAfter(true);
+		view.startAnimation(animate);
+		view.setVisibility(View.GONE);
+	}
+
 	@Override
 	public void onTabChanged(String tabId) {
-		// TODO Auto-generated method stub
 		if (tabId.equals(TAB1)) {
 			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
 			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));

@@ -36,29 +36,31 @@ public final class R {
         public static final int search_btn_selector=0x7f020016;
     }
     public static final class id {
-        public static final int LinearLayout01=0x7f070014;
-        public static final int LinearLayout_search=0x7f070013;
-        public static final int contents=0x7f070010;
+        public static final int LinearLayout01=0x7f070015;
+        public static final int LinearLayout_search=0x7f070014;
+        public static final int contents=0x7f070011;
         public static final int email_edit=0x7f070006;
+        public static final int frame_linearLayout=0x7f07000a;
         public static final int login_btn=0x7f070002;
         public static final int login_id_edit=0x7f070000;
         public static final int login_pw_edit=0x7f070001;
-        public static final int logout_btn=0x7f07000b;
-        public static final int menu_settings=0x7f070018;
+        public static final int logout_btn=0x7f07000c;
+        public static final int menu_settings=0x7f07001a;
+        public static final int notice_list_left_slidingbar=0x7f070019;
         public static final int pw1_edit=0x7f070007;
         public static final int pw2_edit=0x7f070008;
-        public static final int search_btn=0x7f070012;
-        public static final int sidemenu_friends=0x7f07000e;
-        public static final int sidemenu_message=0x7f07000d;
-        public static final int sidemenu_mypage=0x7f07000c;
-        public static final int sidemenu_settings=0x7f07000f;
+        public static final int search_btn=0x7f070013;
+        public static final int sidemenu_friends=0x7f07000f;
+        public static final int sidemenu_message=0x7f07000e;
+        public static final int sidemenu_mypage=0x7f07000d;
+        public static final int sidemenu_settings=0x7f070010;
         public static final int signup_btn=0x7f070003;
         public static final int signup_request_btn=0x7f070009;
-        public static final int slide_menu_btn=0x7f070011;
-        public static final int sub_layout=0x7f07000a;
-        public static final int tab1_indicator=0x7f070015;
-        public static final int tab2_indicator=0x7f070016;
-        public static final int tab3_indicator=0x7f070017;
+        public static final int slide_menu_btn=0x7f070012;
+        public static final int sub_layout=0x7f07000b;
+        public static final int tab1_indicator=0x7f070016;
+        public static final int tab2_indicator=0x7f070017;
+        public static final int tab3_indicator=0x7f070018;
         public static final int user_firstName_edit=0x7f070004;
         public static final int user_lastName_edit=0x7f070005;
     }
