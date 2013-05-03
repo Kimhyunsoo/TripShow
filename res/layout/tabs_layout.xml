@@ -3,141 +3,70 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <ScrollView
+    <LinearLayout
         android:id="@+id/sub_layout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginRight="10dip"
         android:background="#F7876D"
-        android:cacheColorHint="#00000000"
-        android:fadingEdge="horizontal" >
+        android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical" >
+            android:layout_height="60dip"
+            android:baselineAligned="false"
+            android:orientation="horizontal" >
 
             <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="60dip"
-                android:orientation="horizontal" >
+                android:layout_width="60dip"
+                android:layout_height="fill_parent"
+                android:background="@drawable/bg_sidemenu_profile" >
 
-                <LinearLayout
-                    android:layout_width="60dip"
+                <ImageView
+                    android:layout_width="50dip"
                     android:layout_height="fill_parent"
-                    android:background="@drawable/bg_sidemenu_profile" >
-
-                    <ImageView
-                        android:layout_width="50dip"
-                        android:layout_height="fill_parent"
-                        android:src="@drawable/ic_launcher" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dip"
-                    android:layout_height="fill_parent"
-                    android:layout_marginLeft="10dip"
-                    android:layout_weight="1"
-                    android:orientation="vertical" >
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:text="name"
-                        android:textColor="#f9e2b0"
-                        android:textSize="20sp" />
-
-                    <ImageButton
-                        android:id="@+id/logout_btn"
-                        android:layout_width="100dip"
-                        android:layout_height="30dip"
-                        android:background="@android:color/transparent"
-                        android:src="@drawable/icon_logout_btn" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <ImageView
-                android:layout_width="fill_parent"
-                android:layout_height="20dip"
-                android:src="@drawable/dot_line" />
-
-            <LinearLayout
-                android:id="@+id/sidemenu_mypage"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="50dip"
-                    android:layout_height="50dip"
-                    android:src="@drawable/icon_sidemenu_mypage" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dip"
-                    android:text="My Page"
-                    android:textColor="#f9e2b0"
-                    android:textSize="20sp" />
+                    android:contentDescription="@string/img_desc"
+                    android:src="@drawable/ic_launcher" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/sidemenu_message"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="50dip"
-                    android:layout_height="50dip"
-                    android:src="@drawable/icon_sidemenu_message" />
+                android:layout_width="0dip"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dip"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
                 <TextView
                     android:layout_width="fill_parent"
-                    android:layout_height="50dip"
-                    android:text="Message"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_test"
                     android:textColor="#f9e2b0"
                     android:textSize="20sp" />
-            </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sidemenu_friends"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="50dip"
-                    android:layout_height="50dip"
-                    android:src="@drawable/icon_sidemenu_friends" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dip"
-                    android:text="Friends"
-                    android:textColor="#f9e2b0"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/sidemenu_settings"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal" >
-
-                <ImageView
-                    android:layout_width="50dip"
-                    android:layout_height="50dip"
-                    android:src="@drawable/icon_sidemenu_setting" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="50dip"
-                    android:text="Settings"
-                    android:textColor="#f9e2b0"
-                    android:textSize="20sp" />
+                <ImageButton
+                    android:id="@+id/logout_btn"
+                    android:layout_width="100dip"
+                    android:layout_height="30dip"
+                    android:background="@android:color/transparent"
+                    android:contentDescription="@string/img_desc"
+                    android:src="@drawable/icon_logout_btn" />
             </LinearLayout>
         </LinearLayout>
-    </ScrollView>
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="20dip"
+            android:contentDescription="@string/img_desc"
+            android:src="@drawable/dot_line" />
+
+        <ListView
+            android:id="@+id/sidemenu_list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:dividerHeight="5dip"
+            android:divider="#F7876D"
+            android:cacheColorHint="#00000000">
+        </ListView>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/contents"
@@ -160,9 +89,10 @@
                 android:contentDescription="@string/img_desc" />
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="0dip"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.63"
+                android:contentDescription="@string/img_desc"
                 android:src="@drawable/img_home_top" />
 
             <ImageButton
@@ -210,7 +140,7 @@
                     <FrameLayout
                         android:id="@android:id/tabcontent"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                        android:layout_height="0dip"
                         android:layout_weight="1"
                         android:background="@android:color/black" >
                     </FrameLayout>
@@ -223,28 +153,26 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="3dip"
-                        android:orientation="horizontal" >
+                        android:orientation="horizontal"
+                        android:background="#F7876D" >
 
                         <TextView
                             android:id="@+id/tab1_indicator"
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:background="#000000" />
+                            android:layout_weight="1"/>
 
                         <TextView
                             android:id="@+id/tab2_indicator"
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:background="#000000" />
+                            android:layout_weight="1" />
 
                         <TextView
                             android:id="@+id/tab3_indicator"
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_weight="1"
-                            android:background="#000000" />
+                            android:layout_weight="1" />
                     </LinearLayout>
 
                     <TabWidget
@@ -255,13 +183,13 @@
                     </TabWidget>
                 </LinearLayout>
             </RelativeLayout>
+
             <View
                 android:id="@+id/notice_list_left_slidingbar"
-                android:layout_height="fill_parent"
                 android:layout_width="90dip"
+                android:layout_height="fill_parent"
                 android:background="@android:color/transparent"
-                android:clickable="false"
-                />
+                android:clickable="false" />
         </TabHost>
     </LinearLayout>
 

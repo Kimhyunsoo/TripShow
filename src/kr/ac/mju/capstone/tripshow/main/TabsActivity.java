@@ -1,5 +1,6 @@
 package kr.ac.mju.capstone.tripshow.main;
 
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -16,15 +17,18 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.DisplayMetrics;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.view.animation.TranslateAnimation;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
 import android.widget.TabHost;
@@ -32,7 +36,8 @@ import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TabsActivity extends TabActivity implements OnTouchListener, OnClickListener, OnTabChangeListener {
+public class TabsActivity extends TabActivity implements OnTouchListener, 
+												OnClickListener, OnTabChangeListener, OnItemClickListener {
 	private static final String TAB1 = "tab1";
 	private static final String TAB2 = "tab2";
 	private static final String TAB3 = "tab3";
@@ -77,11 +82,25 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		
 		tabHost.setOnTabChangedListener(this);
 		findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
-		findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
-		findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
+		findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
+		findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
 		
 		init();
 		initLayout();
+		initListLayout();
+	}
+
+	private void initListLayout() {
+		SideMenuData data;
+		ArrayList<SideMenuData> sList = new ArrayList<SideMenuData>();
+		for (int i = 0; i< TSConstants.SIDEMENU_NAMES.length; i++) {
+			data = new SideMenuData(TSConstants.SIDEMENU_IMGS[i], TSConstants.SIDEMENU_NAMES[i]);
+			sList.add(data);
+		}
+		SideMenuListAdapter sAdapter = new SideMenuListAdapter(this, R.layout.sidemenu_list_row_layout, sList); 
+		ListView listView = (ListView)findViewById(R.id.sidemenu_list);
+		listView.setAdapter(sAdapter);
+		listView.setOnItemClickListener(this);
 	}
 
 	@Override
@@ -104,10 +123,6 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		leftMin = 0;
 		
 		findViewById(R.id.logout_btn).setOnClickListener(this);
-		findViewById(R.id.sidemenu_friends).setOnClickListener(this);
-		findViewById(R.id.sidemenu_message).setOnClickListener(this);
-		findViewById(R.id.sidemenu_mypage).setOnClickListener(this);
-		findViewById(R.id.sidemenu_settings).setOnClickListener(this);
 		
 		findViewById(R.id.slide_menu_btn).setOnTouchListener(this);
 	}
@@ -141,7 +156,7 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 									oldX = 0;
 									upOldX = 0;
 									isMenuOpened = false;
-//									findViewById(R.id.notice_list_left_slidingbar).setClickable(false);
+									findViewById(R.id.notice_list_left_slidingbar).setClickable(false);
 								} else {
 									contentView.layout(contentView.getLeft() - 15, contentView.getTop(), contentView.getRight() - 15,
 											contentView.getBottom());
@@ -169,7 +184,7 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 									oldX = 0;
 									upOldX = 0;
 									isMenuOpened = true;
-//									findViewById(R.id.notice_list_left_slidingbar).setClickable(true);
+									findViewById(R.id.notice_list_left_slidingbar).setClickable(true);
 								} else {
 									contentView.layout(contentView.getLeft() + 15, contentView.getTop(), contentView.getRight() + 15,
 											contentView.getBottom());
@@ -215,13 +230,17 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		}
 		return false;
 	}
-
+	
 	@Override
-	public void onBackPressed() {
-		if (isMenuOpened)
-			handler.sendEmptyMessage(TSConstants.SLIDING_LEFT);
-		else
-			super.onBackPressed();
+	public boolean dispatchKeyEvent(KeyEvent event) {
+		if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
+			if (isMenuOpened) {
+				handler.sendEmptyMessage(TSConstants.SLIDING_LEFT);
+			} else {
+				return super.dispatchKeyEvent(event);
+			}
+		}
+		return false;
 	}
 	
 	private void stopSlidingTimer() {
@@ -243,25 +262,11 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		case R.id.search_btn:
 			LinearLayout linearLayout = (LinearLayout)findViewById(R.id.LinearLayout_search);
 			if (linearLayout.getVisibility() == View.GONE) {
-				slideToBottom(linearLayout);
 			} else {
-				slideToTop(linearLayout);
 			}
 			break;
 		case R.id.logout_btn:
 			Toast.makeText(getBaseContext(), "Logout", Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.sidemenu_mypage:
-			goToMyPage();
-			break;
-		case R.id.sidemenu_message:
-			Toast.makeText(getBaseContext(), "message", Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.sidemenu_friends:
-			Toast.makeText(getBaseContext(), "friends", Toast.LENGTH_SHORT).show();
-			break;
-		case R.id.sidemenu_settings:
-			Toast.makeText(getBaseContext(), "setting", Toast.LENGTH_SHORT).show();
 			break;
 		default:
 			break;
@@ -278,42 +283,37 @@ public class TabsActivity extends TabActivity implements OnTouchListener, OnClic
 		TextView tv = new TextView(this);
 		tv.setText("My Page");
 		tv.setTextColor(Color.BLACK);
+		linerLayout.addView(tv);
 		
 		fm.addView(linerLayout);
-		
 	}
 	
-	public void slideToBottom(View view){
-		TranslateAnimation animate = new TranslateAnimation(0,0,0,view.getHeight());
-		animate.setDuration(500);
-		animate.setFillAfter(true);
-		view.startAnimation(animate);
-		view.setVisibility(View.VISIBLE);
-	}
-	
-	// To animate view slide out from bottom to top
-	public void slideToTop(View view){
-		TranslateAnimation animate = new TranslateAnimation(0,0,0,-view.getHeight());
-		animate.setDuration(500);
-		animate.setFillAfter(true);
-		view.startAnimation(animate);
-		view.setVisibility(View.GONE);
-	}
-
 	@Override
 	public void onTabChanged(String tabId) {
 		if (tabId.equals(TAB1)) {
 			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
-			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
-			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
+			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
 		} else if (tabId.equals(TAB2)) {
-			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
 			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
-			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
 		} else if (tabId.equals(TAB3)) {
-			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#000000"));
-			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#000000"));
+			findViewById(R.id.tab1_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
+			findViewById(R.id.tab2_indicator).setBackgroundColor(Color.parseColor("#f9e2b0"));
 			findViewById(R.id.tab3_indicator).setBackgroundColor(Color.parseColor("#ffffff"));
+		}
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parantView, View view, int position, long id) {
+		switch (position) {
+		case 0:
+			break;
+		case 1:
+			break;
+		default:
+			break;
 		}
 	}
 }
