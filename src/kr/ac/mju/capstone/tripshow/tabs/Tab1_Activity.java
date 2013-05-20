@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 import kr.ac.mju.capstone.tripshow.R;
 import android.app.Activity;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.SyncStateContract.Constants;
 import android.widget.ListView;
 
 public class Tab1_Activity extends Activity {
@@ -25,7 +25,7 @@ public class Tab1_Activity extends Activity {
 	    dList = new ArrayList<ListData>();
 	    
 	    for (int i = 0; i < 3; i++) {
-	    	data = new ListData("/res/drawble/icon_laucher", "mainImg", "name", "date", "in seoul", 1, 2);
+	    	data = new ListData("R.drawable.icon_sidemenu_mypage", "mainImg", "name", "date", "in seoul", "1", "2");
 	    	dList.add(data);
 	    }
 	    

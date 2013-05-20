@@ -46,7 +46,6 @@ public class MyAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View view, ViewGroup viewGruop) {
 		// TODO Auto-generated method stub
-		final int pos = position;
 		if (view == null) {
 			view = inflater.inflate(layout, viewGruop, false);
 		}
@@ -67,10 +66,10 @@ public class MyAdapter extends BaseAdapter {
 		location.setText(list.get(position).getLocation());
 		
 		TextView comment_cnt = (TextView)view.findViewById(R.id.comment_cnt_text);
-		comment_cnt.setText(list.get(position).getName());
+		comment_cnt.setText(list.get(position).getComment_cnt());
 		
 		TextView favorite_cnt = (TextView)view.findViewById(R.id.favorite_cnt_text);
-		favorite_cnt.setText(list.get(position).getName());
+		favorite_cnt.setText(list.get(position).getFavorite_cnt());
 		
 		return view;
 	}
