@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="250dip"
+    android:layout_margin="3dip"
+    android:background="#F9E2B0"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="70dip"
+        android:layout_height="match_parent"
+		android:layout_marginTop="3dip"
+		android:layout_marginLeft="3dip"
+		android:layout_marginBottom="3dip"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/user_img"
+            android:layout_width="65dip"
+            android:layout_height="65dip"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_sidemenu_mypage" />
+
+        <TextView
+            android:id="@+id/user_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="User"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="date"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/location_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="location"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="#FEFADB"
+        android:layout_margin="5dip"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="220dip"
+            android:layout_gravity="center" >
+
+            <ImageView
+                android:id="@+id/main_img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="3dip"
+                android:src="@drawable/icon_launcher" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:background="#FEFADB" >
+
+            <ImageView
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/home_comment" />
+
+            <TextView
+                android:id="@+id/comment_cnt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="15sp" />
+            
+            <ImageView
+                android:layout_width="20dip"
+                android:layout_height="20dip"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:src="@drawable/home_heart_number"
+                />
+            <TextView
+                android:id="@+id/favorite_cnt_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:text="0"
+                android:textSize="15sp" />
+              
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
