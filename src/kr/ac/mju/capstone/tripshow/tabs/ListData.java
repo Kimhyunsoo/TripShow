@@ -1,14 +1,14 @@
 package kr.ac.mju.capstone.tripshow.tabs;
 
 public class ListData {
-	private String userImg;
-	private String mainImg;
+	private int userImg;
+	private int mainImg;
 	private String name;
 	private String date;
 	private String location;
 	private String comment_cnt;
 	private String favorite_cnt;
-	public ListData(String userImg, String mainImg, String name, String date,
+	public ListData(int userImg, int mainImg, String name, String date,
 			String location, String comment_cnt, String favorite_cnt) {
 		super();
 		this.userImg = userImg;
@@ -22,13 +22,13 @@ public class ListData {
 	/**
 	 * @return the userImg
 	 */
-	public String getUserImg() {
+	public int getUserImg() {
 		return userImg;
 	}
 	/**
 	 * @return the mainImg
 	 */
-	public String getMainImg() {
+	public int getMainImg() {
 		return mainImg;
 	}
 	/**
@@ -61,8 +61,6 @@ public class ListData {
 	public String getFavorite_cnt() {
 		return favorite_cnt;
 	}
-	
-	
 	
 	
 

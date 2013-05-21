@@ -51,10 +51,10 @@ public class MyAdapter extends BaseAdapter {
 		}
 		
 		ImageView userImg = (ImageView)view.findViewById(R.id.user_img);
-		userImg.setImageURI(Uri.parse(list.get(position).getUserImg()));
+		userImg.setImageResource(list.get(position).getUserImg());
 		
 		ImageView mainImg = (ImageView)view.findViewById(R.id.main_img);
-		mainImg.setImageURI(Uri.parse(list.get(position).getMainImg()));
+		mainImg.setImageResource(list.get(position).getMainImg());
 		
 		TextView name = (TextView)view.findViewById(R.id.user_text);
 		name.setText(list.get(position).getName());
