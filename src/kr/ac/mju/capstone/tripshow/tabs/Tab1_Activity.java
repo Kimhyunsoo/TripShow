@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import kr.ac.mju.capstone.tripshow.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +36,7 @@ public class Tab1_Activity extends Activity implements OnClickListener, OnItemCl
 	    mAdapter = new MyAdapter(this, R.layout.home_list, dList);
 	    listView = (ListView)findViewById(R.id.listView1);
 	    listView.setAdapter(mAdapter);
-	    //listView.setOnItemClickListener(this);
+	    listView.setOnItemClickListener(this);
 
 	    
 	    
@@ -45,7 +46,8 @@ public class Tab1_Activity extends Activity implements OnClickListener, OnItemCl
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View arg1, int arg2, long arg3) {
 		// TODO Auto-generated method stub
-		
+//		Intent intent = new Intent(this,);
+//		startActivity(intent);
 	}
 
 
